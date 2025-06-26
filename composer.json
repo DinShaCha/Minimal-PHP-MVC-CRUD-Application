@@ -1,0 +1,17 @@
+{
+    "name": "asus/basic_crud_3",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "DinShaCha",
+            "email": "shadu.chan@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.21"
+    }
+}

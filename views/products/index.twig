@@ -1,0 +1,47 @@
+{% extends "layout.twig"%}
+
+{% block body %}
+    <h1 class="p-3">Products CRUD</h1>
+    <form>
+        <div class="input-group mb-3">
+            <input type="text" name="search" class="form-control" placeholder="Product Name" value="{{ search }}" autocomplete="off">
+            <input type="submit" class="btn btn-secondary" value="Search">
+        </div>
+    </form>
+    <div class="p-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Created Date</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for id,product in products %}
+                    <tr>
+                        <th scope="row">{{id +  1}}</th>
+                        <td>
+                            {% if product.image is not empty %}
+                                <img src="/{{ product.image }}" class="thumb-image">
+                            {% endif %}
+                        </td> 
+                        <td>{{ product.title }}</td>
+                        <td>$ {{ product.price }}</td>
+                        <td>{{ product.created_date }}</td>
+                        <td>
+                            <a href="/products/update?id={{ product.id }}" class="btn btn-sm btn-success">Edit</a>
+                            <form class="button" method="POST" action="/products/delete">
+                                <input type="hidden" name="id" value="{{ product.id }}">
+                                <button onclick="return confirm('Are you sure?')" type="submit" class="btn btn-sm btn-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

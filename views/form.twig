@@ -1,0 +1,38 @@
+{% extends "layout.twig" %}
+
+{% block body %}
+    {% if errors is not empty %}
+    <div class="alert alert-primary">
+    {% for error in errors %}
+            <p>{{ error }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <div class="p-5">
+        <h1 class="p-3">{% block title %} {% endblock %}</h1>
+        <form method="POST" action="" enctype="multipart/form-data">
+            {% if product.image is not empty %}
+                <img src="/{{ product.image }}" class="update-image">
+            {% endif %}
+            <div class="mb-3">
+                <label>Product Image</label>
+                <br>
+                <input type="file" name="image">
+            </div>
+            <div class="mb-3">
+                <label>Product Title</label>
+                <input type="text" name="title" class="form-control" value="{{ product.title }}">
+            </div>
+            <div class="mb-3">
+                <label>Product Description</label>
+                <textarea name="description" class="form-control">{{ product.description }}</textarea>
+            </div>
+            <div class="mb-3">
+                <label>Product price</label>
+                <input type="number" name="price" step=".01" class="form-control" value="{{ product.price }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+{% endblock %}
