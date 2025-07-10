@@ -1,6 +1,6 @@
 ##  Project Overview
 
-This is a minimal PHP CRUD application built with a lightweight custom MVC architecture and Twig as the templating engine. It allows users to upload and manage prescriptions, assign medicines with price calculation, and handle quotations through a simple accept/reject workflow.
+This is a minimal PHP CRUD application built with a lightweight custom MVC architecture and Twig as the templating engine. The app allows users to create, read, update, and delete products, each having a title, description, price, and image.
 
 ##  Features Implemented
 
