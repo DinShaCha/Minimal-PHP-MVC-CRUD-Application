@@ -20,7 +20,7 @@ class Product
         $this->title = $data['title'];
         $this->description = $data['description'] ?? '';
         $this->price = $data['price'];
-        $this->imagePath = $data['image'] ?? null;
+        $this->imagePath = $data['imagePath'] ?? null;
         $this->imageFile = $data['imageFile'] ?? null;
     }
 

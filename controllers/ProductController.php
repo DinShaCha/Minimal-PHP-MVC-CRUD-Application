@@ -56,7 +56,6 @@ class ProductController
 
         $errors = [];
         $product = $router->database->getProductsById($id);
-        
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $product = [
@@ -64,7 +63,8 @@ class ProductController
                 'title' => $_POST['title'],
                 'description' => $_POST['description'],
                 'price' => $_POST['price'],
-                'imageFile' => $_FILES['image']
+                'imageFile' => $_FILES['image'],
+                'imagePath' => $product['image']
             ];
 
             $prod = new Product();
