@@ -21,7 +21,7 @@ This is a minimal PHP CRUD application built with a lightweight custom MVC archi
 3. **Install dependencies**
    ```bash
    composer install
-   php -S localhost:8000 -t public
+   php -S localhost:8000
 4. Configure the database
    - Create a MySQL database (e.g., product_crud_1)
    - Import the provided SQL file (e.g., database.sql)
